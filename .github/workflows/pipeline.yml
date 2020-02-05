@@ -29,8 +29,8 @@ jobs:
     - name: Install Cf Cli
       run: |
         wget -q -O - https://packages.cloudfoundry.org/debian/cli.cloudfoundry.org.key | sudo apt-key add -
-        echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
 
+        echo "deb https://packages.cloudfoundry.org/debian stable main" | sudo tee /etc/apt/sources.list.d/cloudfoundry-cli.list
         sudo apt-get update
         sudo apt-get install cf-cli
     - name: Download artifact
@@ -47,4 +47,3 @@ jobs:
         CF_SPACE: ${{ secrets.CF_SPACE }}
         CF_USERNAME: ${{ secrets.CF_USERNAME }}
         CF_PASSWORD: ${{ secrets.CF_PASSWORD }}
-        CF_TRACE: true
